@@ -35,6 +35,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
       var items = [];
+      window.items = items;
       for (var i = 0; i < 20; i++) {
         items.push({ title: "Item " + i, visible: i % 2 === 0, id: i });
       }
@@ -45,6 +46,7 @@
       };
 
       var projector = window.maquette.createProjector(document.querySelector("#target"), render);
+      window.projector = projector;
 
       setTimeout(function () {
         items[16].visible = false;
